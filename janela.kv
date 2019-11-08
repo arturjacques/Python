@@ -1,0 +1,77 @@
+#: set cyan (0,230,230,1)
+#: set red (255,0,0,1)
+#: set black (0,0,0,1)
+#: set gray (200,200,200,1)
+
+<MeuBotao@Button>
+    bold: True
+    font_size: '20sp'
+    opacity:0.8
+    size_hint:0.5,1/10
+
+<MeuToggle@ToggleButton>
+    bold: True
+    font_size: '20sp'
+    opacity:0.8
+    size_hint:0.5,1/10
+
+<MeuTexto@TextInput>
+    size_hint: 1,1/10
+    halign: 'center'
+    opacity: 0.8
+    font_size:'20sp'
+    markup:True
+
+<MeuLabel@Label>
+    bold: True
+    font_size: '30sp'
+    opacity:0.8
+    size_hint:0.5,1/10
+    halign: 'center'
+    valign: 'middle'
+    canvas.before:
+        Color:
+            rgba:gray
+        Rectangle:
+            pos:self.pos
+            size:self.size
+
+<Inicio@FloatLayout>
+    canvas.before:
+        Color:
+            rgba:black
+        Rectangle:
+            pos:self.pos
+            size:self.size
+    MeuBotao:
+        text: 'Novo Jogo'
+        size_hint:3/4,1/8
+        pos_hint:{'center_x':0.5,'center_y':0.7}
+        on_press: root.new_game()
+    MeuBotao:
+        text: 'Continuar'
+        size_hint:3/4,1/8
+        pos_hint:{'center_x':0.5,'center_y':0.3}
+
+<AddJogador@StackLayout>
+    canvas.before:
+        Color:
+            rgba:black
+        Rectangle:
+            pos:self.pos
+            size:self.size
+    orientation:'lr-tb'
+
+<Opcoes@StackLayout>
+    padding:1
+    spacing:1
+    orientation:'lr-tb'
+
+<Jogo1@StackLayout>
+    spacing:1
+    padding:1
+
+<Jogo2@StackLayout>
+    spacing:1
+    padding:1
+
